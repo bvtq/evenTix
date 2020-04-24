@@ -1,0 +1,34 @@
+{
+  "name": "eventix",
+  "version": "1.0.0",
+  "description": "final project phase 1 hacktiv8",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bvtq/evenTix.git"
+  },
+  "author": "Kartika Sari Dewi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bvtq/evenTix/issues"
+  },
+  "homepage": "https://github.com/bvtq/evenTix#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "heroku": "^7.39.5",
+    "multer": "^1.4.2",
+    "node-gyp": "^6.1.0",
+    "nodemailer": "^6.4.6",
+    "nodemon": "^2.0.3",
+    "pg": "^8.0.3",
+    "sequelize": "^5.21.7",
+    "sequelize-cli": "^5.5.1"
+  }
+}

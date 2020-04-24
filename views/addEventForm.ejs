@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Add Event</title>
+</head>
+
+<body>
+    <center>
+
+        <%- include('./partials/navbar') %>
+    </center>  
+  <h1>Add Event</h1>
+  <div>
+    <form action="/events/add" method="POST">
+        <div>
+            <label>Name</label>
+            <div>
+                <input type="text" name="name">
+            </div>
+        </div>
+        <div>
+            <label>Location</label>
+            <div>
+                <input type="text" name="location">
+            </div>
+        </div>
+        <div>
+            <label>Price</label>
+            <div>
+                <input type="number" name="price"><br>
+            </div>
+        </div>
+        <div>
+            <label>Capacity</label>
+            <div>
+                <input type="number" name="capacity">
+            </div>
+        </div>
+        
+        <br>
+        <input type="submit" value="Add">
+    </form>
+  </div>
+</body>
+
+</html>
+

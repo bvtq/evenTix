@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" href="/style.css" rel="stylesheet" />
+    <title>Events List</title>
+  </head>
+  <body>
+    <center>
+      <%- include('./partials/navbar') %>
+  </center>
+    <h1>EVENTS LIST</h1>
+    <button onclick="window.location.href = '/events/add';">
+      Add Event
+    </button>
+    <br>
+    <br>
+
+    <table border>
+      <thead>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Price</th>
+        <th>Capacity</th>
+        <th>Actions</th>
+        
+      </thead>
+      <tbody>
+        <% for (let i = 0; i < events.length; i++) { %>
+        <tr>
+          <td><%= events[i].name %></td>
+          <td><%= events[i].location %></td>
+          <td><%= events[i].price %></td>
+          <td><%= events[i].capacity %></td>
+          <td><a href='/events/addUserForm/<%= events[i].id %> '>Buy Ticket</a> || <a href='/events/edit/<%= events[i].id %>'>Edit</a> || <a href='/events/delete/<%= events[i].id %>'>Delete</a></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <%- include('./partials/navbar') %>
+  </center>  
+    <h1>
+      <span style="border: 2px black solid; font-size: 42px;"
+        ><%= events.name %>'s Attendee </span>
+    </h1>
+    <form action="/events/addUser/<%= events.id %>" method="POST">
+      <label for="user">User</label>
+      <br />
+      <select name="users" id="users">
+        <% for (let i = 0; i < users.length; i++) { %>
+        <option value="<%= users[i].id %>"
+          ><%= users[i].getFullName() %></option
+        >
+        <% } %>
+      </select>
+      <br />
+      <br />
+      <label for="quantity">Quantity</label>
+      <br />
+      <input type="number" name="quantity" />
+      <br />
+      <br />
+      <input type="submit" value="Add" />
+    </form>
+
+    <h1>Event's attendee</h1>
+    <table border>
+      <thead>
+        <tr>
+          <td>Users</td>
+          <td>Ticket Bought</td>
+          <td>Date Bought</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (let i = 0; i < orders.length; i++) { %>
+        <tr>
+          <td> <%= orders[i].User.getFullName() %> </td>
+          <td> <%= orders[i].quantity %> </td>
+          <td> <%= orders[i].date %> </td>
+
+
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+  </body>
+</html>

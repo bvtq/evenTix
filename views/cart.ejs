@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+<body>
+    <center>
+        <%- include('./partials/navbar') %>
+    </center>
+
+    <% if (data.length > 0) { %>
+    <h1><%= data[0].User.getFullName() %>'s cart</h1><br><br>
+    <table border>
+        <thead>
+            <th>Event Name</th>
+            <th>Event Location</th>
+            <th>Ticket Price</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+
+        </thead>
+        <tbody>
+            <% for (let i = 0 ; i < data.length ; i++) { %>
+                <tr>
+                    <td><%= data[i].Event.name %></td>
+                    <td><%= data[i].Event.location %></td>
+                    <td><%= data[i].Event.price %> </td>
+                    <td><%= data[i].quantity %> </td>
+                    <td><%= data[i].quantity * data[i].Event.price%> </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+    <% } else { %>
+        <h1>You have not buy any tickets!</h1>
+    <% } %>
+</body>
+</html>

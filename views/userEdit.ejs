@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Edit User Profile</title>
+</head>
+
+<body>
+    <center>
+        <%- include('./partials/navbar') %>
+    </center>
+
+  <h1>Edit User Profile</h1>
+  <div>
+    <form action="/users/edit/<%= users.id %> " method="POST">
+        <div>
+            <label>First Name</label>
+            <div>
+                <input type="text" name="first_name" value="<%= users.first_name  %>">
+            </div>
+        </div>
+        <div>
+            <label>Last Name</label>
+            <div>
+                <input type="text" name="last_name" value="<%= users.last_name  %>">
+            </div>
+        </div>
+        <div>
+            <label>Phone Number</label>
+            <div>
+                <input type="text" name="phone_number" value="<%= users.phone_number %>">
+            </div>
+        </div>
+        <div>
+            <label>Email</label>
+            <div>
+                <input type="email" name="email" value="<%= users.email %>"><br>
+            </div>
+        </div>
+        <div>
+            <label>Password</label>
+            <div>
+                <input type="password" name="password" value="<%= users.password %>"><br>
+            </div>
+        </div>
+
+        </div>
+        <input type="submit" value="Edit">
+    </form>
+  </div>
+</body>
+
+</html>
+
